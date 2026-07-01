@@ -1,0 +1,89 @@
+.announcement-bar{
+
+    width:100%;
+
+    height:42px;
+
+    overflow:hidden;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    white-space:nowrap;
+
+}
+
+.announcement-track{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:80px;
+
+    animation:marquee 28s linear infinite;
+
+}
+
+.announcement-track span{
+
+    font-size:15px;
+
+    font-weight:600;
+
+    letter-spacing:.3px;
+
+}
+
+@keyframes marquee{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+.announcement-bar:hover .announcement-track{
+
+    animation-play-state:paused;
+
+}
+
+@media(max-width:768px){
+
+.announcement-bar{
+
+height:38px;
+
+}
+
+.announcement-track{
+
+gap:50px;
+
+}
+
+.announcement-track span{
+
+font-size:13px;
+
+}
+
+}
