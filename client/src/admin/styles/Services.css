@@ -1,0 +1,65 @@
+/* ==========================================
+   SERVICES PAGE CONTAINER
+========================================== */
+.services-page {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ==========================================
+   SERVICE IMAGE THUMBNAIL
+========================================== */
+.service-thumb {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.service-name-td {
+  font-weight: 600;
+  color: #082b73;
+}
+
+/* ==========================================
+   FEATURES BADGE
+========================================== */
+.features-count-badge {
+  background: rgba(8, 43, 115, 0.06);
+  color: #082b73;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.no-features-badge {
+  color: #9ca3af;
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* ==========================================
+   STATUS BADGES (page-specific extensions)
+========================================== */
+.badge.active-status {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.badge.inactive-status {
+  background: rgba(107, 114, 128, 0.08);
+  color: #6b7280;
+}
+
+/* ==========================================
+   DISABLE STYLE FOR DELETE BTN
+========================================== */
+.delete-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}

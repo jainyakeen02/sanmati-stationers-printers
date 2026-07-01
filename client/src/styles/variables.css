@@ -1,0 +1,25 @@
+:root {
+  --primary: #0F4C81;
+  --secondary: #D62828;
+  --accent: #2563EB;
+  --whatsapp: #25D366;
+
+  --white: #FFFFFF;
+  --light: #F8FAFC;
+  --dark: #0F172A;
+  --heading: #0F172A;
+  --paragraph: #475569;
+  --muted: #64748B;
+  --border: #E2E8F0;
+
+  --shadow-sm: 0 8px 24px rgba(15, 23, 42, .06);
+  --shadow-md: 0 16px 40px rgba(15, 23, 42, .10);
+  --shadow-lg: 0 28px 70px rgba(15, 23, 42, .15);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+
+  --transition: .25s ease;
+  --container: 1200px;
+}

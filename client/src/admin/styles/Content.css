@@ -1,0 +1,149 @@
+.admin-content-page {
+  padding: 32px;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-end;
+  margin-bottom: 28px;
+}
+
+.content-header span {
+  color: #2563eb;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 13px;
+}
+
+.content-header h1 {
+  margin-top: 8px;
+  color: #0f172a;
+}
+
+.content-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.content-tabs button,
+.content-form button,
+.content-list button {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-weight: 700;
+}
+
+.content-tabs button {
+  background: #e2e8f0;
+  color: #0f172a;
+  text-transform: capitalize;
+}
+
+.content-tabs button.active,
+.content-form button {
+  background: #0f4c81;
+  color: #ffffff;
+}
+
+.content-panel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, .08);
+}
+
+.content-form {
+  display: grid;
+  gap: 22px;
+}
+
+.content-form h2 {
+  color: #0f172a;
+  font-size: 20px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.content-form.compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.content-form label {
+  display: grid;
+  gap: 8px;
+}
+
+.content-form label span {
+  color: #475569;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.content-form input,
+.content-form textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 13px 14px;
+  outline: none;
+}
+
+.content-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.content-list {
+  display: grid;
+  gap: 14px;
+}
+
+.content-list article {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.content-list h3 {
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.content-list p,
+.empty-content {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.content-list button {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+@media (max-width: 900px) {
+  .content-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .content-grid,
+  .content-form.compact {
+    grid-template-columns: 1fr;
+  }
+}

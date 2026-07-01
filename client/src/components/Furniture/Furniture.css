@@ -1,0 +1,299 @@
+/* ==========================================
+   Furniture Page
+========================================== */
+
+.furniture-page {
+  background: #f8fbff;
+  min-height: 100vh;
+}
+
+/* ==========================================
+   Hero Banner
+========================================== */
+
+.furniture-banner {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+}
+
+.furniture-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.furniture-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 40, 90, 0.82),
+    rgba(0, 40, 90, 0.45)
+  );
+  display: flex;
+  align-items: center;
+}
+
+.furniture-banner-content {
+  width: min(1200px, 92%);
+  margin: auto;
+  color: #fff;
+}
+
+.furniture-banner-content span {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 8px 18px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.furniture-banner-content h1 {
+  font-size: 3rem;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+.furniture-banner-content p {
+  max-width: 700px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   Container
+========================================== */
+
+.furniture-container {
+  width: min(1200px, 92%);
+  margin: 70px auto;
+}
+
+/* ==========================================
+   Categories
+========================================== */
+
+.furniture-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 55px;
+}
+
+.furniture-category-chip {
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 2px solid #0056d2;
+  background: #fff;
+  color: #0056d2;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.furniture-category-chip:hover {
+  background: #0056d2;
+  color: #fff;
+}
+
+/* ==========================================
+   Grid
+========================================== */
+
+.furniture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 30px;
+}
+
+/* ==========================================
+   Card
+========================================== */
+
+.furniture-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+}
+
+.furniture-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
+}
+
+.furniture-card-image {
+  height: 230px;
+  overflow: hidden;
+}
+
+.furniture-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.furniture-card:hover .furniture-card-image img {
+  transform: scale(1.08);
+}
+
+.furniture-card-content {
+  padding: 24px;
+}
+
+.furniture-category {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 6px 14px;
+  border-radius: 30px;
+  background: rgba(0, 86, 210, 0.08);
+  color: #0056d2;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.furniture-card-content h3 {
+  font-size: 1.35rem;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.furniture-card-content p {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+/* ==========================================
+   Button
+========================================== */
+
+.furniture-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: linear-gradient(135deg, #0056d2, #d60000);
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.furniture-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   CTA
+========================================== */
+
+.furniture-cta {
+  margin-top: 80px;
+  padding: 60px 30px;
+  border-radius: 24px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #0056d2, #d60000);
+}
+
+.furniture-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 18px;
+}
+
+.furniture-cta p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
+}
+
+.furniture-cta-btn {
+  display: inline-block;
+  padding: 15px 35px;
+  border-radius: 50px;
+  background: #fff;
+  color: #0056d2;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.furniture-cta-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 992px) {
+
+  .furniture-banner {
+    height: 340px;
+  }
+
+  .furniture-banner-content h1 {
+    font-size: 2.4rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .furniture-banner {
+    height: 280px;
+  }
+
+  .furniture-banner-content h1 {
+    font-size: 2rem;
+  }
+
+  .furniture-banner-content p {
+    font-size: 0.95rem;
+  }
+
+  .furniture-cta {
+    padding: 45px 20px;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .furniture-banner {
+    height: 240px;
+  }
+
+  .furniture-banner-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .furniture-category-chip {
+    width: 100%;
+    text-align: center;
+  }
+
+  .furniture-grid {
+    gap: 22px;
+  }
+
+  .furniture-card-content {
+    padding: 20px;
+  }
+
+  .furniture-cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+}

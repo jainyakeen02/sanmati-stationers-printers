@@ -1,0 +1,545 @@
+/* ======================================
+   SCHOOL STATIONERY SECTION
+====================================== */
+
+.school-stationery{
+
+    background:#ffffff;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.school-stationery::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    background:rgba(18,58,132,.05);
+
+    border-radius:50%;
+
+    top:-120px;
+
+    left:-120px;
+
+    filter:blur(60px);
+
+}
+
+.school-stationery::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    background:rgba(228,30,43,.05);
+
+    border-radius:50%;
+
+    bottom:-120px;
+
+    right:-120px;
+
+    filter:blur(60px);
+
+}
+
+/* ========================= */
+
+.category-filter{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin:50px 0;
+
+}
+
+.category-filter button{
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#fff;
+
+    color:var(--heading);
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.category-filter button:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.category-filter button.active{
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+    );
+
+    color:#fff;
+
+}
+/* ======================================
+   PRODUCTS GRID
+====================================== */
+
+.products-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+/* ======================================
+   PRODUCT CARD
+====================================== */
+
+.product-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:all .35s ease;
+
+    border:1px solid rgba(18,58,132,.08);
+
+}
+
+.product-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+/* ======================================
+   IMAGE
+====================================== */
+
+.product-image{
+
+    height:230px;
+
+    overflow:hidden;
+
+}
+
+.product-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.product-card:hover .product-image img{
+
+    transform:scale(1.08);
+
+}
+
+/* ======================================
+   CONTENT
+====================================== */
+
+.product-content{
+
+    padding:24px;
+
+}
+
+.product-content span{
+
+    display:inline-block;
+
+    padding:7px 16px;
+
+    background:rgba(18,58,132,.08);
+
+    color:var(--primary);
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+}
+
+.product-content h3{
+
+    font-size:22px;
+
+    color:var(--heading);
+
+    margin-bottom:18px;
+
+    line-height:1.3;
+
+    transition:.3s;
+
+}
+
+.product-card:hover h3{
+
+    color:var(--secondary);
+
+}
+
+/* ======================================
+   FEATURES
+====================================== */
+
+.product-content ul{
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-bottom:24px;
+
+}
+
+.product-content ul li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:15px;
+
+    color:var(--paragraph);
+
+}
+
+.product-content ul li svg{
+
+    color:#25D366;
+
+    font-size:14px;
+
+}
+
+/* ======================================
+   WHATSAPP BUTTON
+====================================== */
+
+.product-content .whatsapp-btn{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px;
+
+    background:#25D366;
+
+    color:#fff;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.product-content .whatsapp-btn:hover{
+
+    background:#1ca851;
+
+    transform:translateY(-3px);
+
+}
+/* ======================================
+   Responsive Design
+====================================== */
+
+@media (max-width:1200px){
+
+.products-grid{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+}
+
+@media (max-width:992px){
+
+.school-stationery{
+
+padding:80px 0;
+
+}
+
+.category-filter{
+
+gap:12px;
+
+}
+
+.category-filter button{
+
+padding:12px 22px;
+
+font-size:14px;
+
+}
+
+.products-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:25px;
+
+}
+
+.product-image{
+
+height:220px;
+
+}
+
+.product-content{
+
+padding:20px;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.school-stationery{
+
+padding:70px 0;
+
+}
+
+.category-filter{
+
+justify-content:flex-start;
+
+overflow-x:auto;
+
+padding-bottom:10px;
+
+flex-wrap:nowrap;
+
+scrollbar-width:none;
+
+}
+
+.category-filter::-webkit-scrollbar{
+
+display:none;
+
+}
+
+.category-filter button{
+
+white-space:nowrap;
+
+flex-shrink:0;
+
+}
+
+.products-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.product-image{
+
+height:240px;
+
+}
+
+.product-content h3{
+
+font-size:20px;
+
+}
+
+.product-content ul li{
+
+font-size:14px;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.product-image{
+
+height:210px;
+
+}
+
+.product-content{
+
+padding:18px;
+
+}
+
+.product-content span{
+
+font-size:12px;
+
+padding:6px 14px;
+
+}
+
+.product-content h3{
+
+font-size:18px;
+
+}
+
+.product-content .whatsapp-btn{
+
+padding:13px;
+
+font-size:14px;
+
+}
+
+}
+
+/* ======================================
+   Premium Effects
+====================================== */
+
+.product-card{
+
+position:relative;
+
+}
+
+.product-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:4px;
+
+background:linear-gradient(
+90deg,
+var(--primary),
+var(--secondary)
+);
+
+transform:scaleX(0);
+
+transform-origin:left;
+
+transition:.35s;
+
+}
+
+.product-card:hover::before{
+
+transform:scaleX(1);
+
+}
+
+.product-card:hover{
+
+border-color:rgba(18,58,132,.2);
+
+}
+
+.product-content .whatsapp-btn svg{
+
+transition:.3s;
+
+}
+
+.product-content .whatsapp-btn:hover svg{
+
+transform:translateX(5px);
+
+}
+
+.product-image img{
+
+user-select:none;
+
+}
+
+.category-filter button{
+
+font-family:inherit;
+
+}
