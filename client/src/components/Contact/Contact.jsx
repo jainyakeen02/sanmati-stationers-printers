@@ -20,15 +20,13 @@ const initialFormData = {
   message: "",
 };
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
-
 async function sendEmailJsMessage(payload) {
   const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   if (!serviceId || !templateId || !publicKey) {
-    return;
+    throw new Error("EmailJS environment variables are missing.");
   }
 
   await axios.post("https://api.emailjs.com/api/v1.0/email/send", {
@@ -36,12 +34,12 @@ async function sendEmailJsMessage(payload) {
     template_id: templateId,
     user_id: publicKey,
     template_params: {
-    name: payload.name,
-    email: payload.email,
-    phone: payload.phone,
-    subject: payload.subject || "Website Inquiry",
-    message: payload.message,
-    time: new Date().toLocaleString("en-IN"),
+      name: payload.name,
+      email: payload.email,
+      phone: payload.phone,
+      subject: payload.subject || "Website Inquiry",
+      message: payload.message,
+      time: new Date().toLocaleString("en-IN"),
     },
   });
 }
@@ -58,8 +56,12 @@ const Contact = () => {
   };
 
   const validateForm = () => {
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      toast.error("Please fill in name, email and message.");
+    if (
+      !formData.name.trim() ||
+      !formData.email.trim() ||
+      !formData.message.trim()
+    ) {
+      toast.error("Please fill in Name, Email and Message.");
       return false;
     }
 
@@ -68,7 +70,10 @@ const Contact = () => {
       return false;
     }
 
-    if (formData.phone && !/^[0-9+\-\s()]{7,20}$/.test(formData.phone)) {
+    if (
+      formData.phone &&
+      !/^[0-9+\-\s()]{7,20}$/.test(formData.phone)
+    ) {
       toast.error("Please enter a valid phone number.");
       return false;
     }
@@ -79,14 +84,12 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
     try {
       setLoading(true);
+
       const payload = {
-        ...formData,
         name: formData.name.trim(),
         email: formData.email.trim(),
         phone: formData.phone.trim(),
@@ -94,12 +97,15 @@ const Contact = () => {
         message: formData.message.trim(),
       };
 
-      const { data } = await axios.post(`${API_BASE_URL}/contacts`, payload);
       await sendEmailJsMessage(payload);
-      toast.success(data.message || "Message sent successfully.");
+
+      toast.success("Message sent successfully.");
+
       setFormData(initialFormData);
     } catch (error) {
-      toast.error(error.response?.data?.message || "Failed to send message. Please try again.");
+      console.error(error);
+
+      toast.error("Failed to send message. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -114,14 +120,16 @@ const Contact = () => {
       <div className="contact-container">
         <div className="contact-info">
           <span className="contact-tag">Contact Us</span>
+
           <h2>
             Let's Connect With
             <span> {businessInfo.name}</span>
           </h2>
+
           <p>
-            Whether you need school stationery, office supplies, printing
-            services or furniture, contact us for quotations, bulk orders and
-            customized solutions.
+            Whether you need school stationery, office supplies,
+            printing services or furniture, contact us for quotations,
+            bulk orders and customized solutions.
           </p>
 
           <div className="contact-card">
@@ -163,6 +171,7 @@ const Contact = () => {
           <form onSubmit={handleSubmit} noValidate>
             <label>
               <span>Full Name *</span>
+
               <input
                 type="text"
                 name="name"
@@ -176,6 +185,7 @@ const Contact = () => {
 
             <label>
               <span>Email Address *</span>
+
               <input
                 type="email"
                 name="email"
@@ -189,6 +199,7 @@ const Contact = () => {
 
             <label>
               <span>Phone Number</span>
+
               <input
                 type="tel"
                 name="phone"
@@ -201,6 +212,7 @@ const Contact = () => {
 
             <label>
               <span>Subject</span>
+
               <input
                 type="text"
                 name="subject"
@@ -212,6 +224,7 @@ const Contact = () => {
 
             <label>
               <span>Message *</span>
+
               <textarea
                 rows="6"
                 name="message"
@@ -226,7 +239,13 @@ const Contact = () => {
               <button type="submit" disabled={loading}>
                 {loading ? "Sending..." : "Send Message"}
               </button>
-              <button type="button" className="reset-btn" onClick={handleReset} disabled={loading}>
+
+              <button
+                type="button"
+                className="reset-btn"
+                onClick={handleReset}
+                disabled={loading}
+              >
                 Reset
               </button>
             </div>
