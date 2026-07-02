@@ -21,19 +21,18 @@ import {
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import NotFound from "./components/NotFound/NotFound";
 
-import AdminLayout from "./admin/layouts/AdminLayout";
-import PrivateRoute from "./admin/routes/PrivateRoute";
-
-const SchoolStationery = lazy(() => import("./components/SchoolStationery/SchoolStationery"));
-const OfficeSupplies = lazy(() => import("./components/OfficeSupplies/OfficeSupplies"));
-const PrintingServices = lazy(() => import("./components/PrintingServices/PrintingServices"));
-const Furniture = lazy(() => import("./components/Furniture/Furniture"));
-const Login = lazy(() => import("./admin/pages/Login"));
-const Dashboard = lazy(() => import("./admin/pages/Dashboard"));
-const Products = lazy(() => import("./admin/pages/Products"));
-const AdminServices = lazy(() => import("./admin/pages/Services"));
-const Contacts = lazy(() => import("./admin/pages/Contacts"));
-const Content = lazy(() => import("./admin/pages/Content"));
+const SchoolStationery = lazy(() =>
+  import("./components/SchoolStationery/SchoolStationery")
+);
+const OfficeSupplies = lazy(() =>
+  import("./components/OfficeSupplies/OfficeSupplies")
+);
+const PrintingServices = lazy(() =>
+  import("./components/PrintingServices/PrintingServices")
+);
+const Furniture = lazy(() =>
+  import("./components/Furniture/Furniture")
+);
 
 function WebsiteShell({ children }) {
   return (
@@ -81,38 +80,48 @@ function App() {
       <a href="#main-content" className="skip-link">
         Skip to content
       </a>
+
       <ScrollToTop />
 
       <Suspense fallback={<div className="container section">Loading...</div>}>
         <Routes>
           <Route path="/" element={<Home />} />
+
           <Route
             path="/school-stationery"
-            element={<ServicePage><SchoolStationery /></ServicePage>}
-          />
-          <Route
-            path="/office-supplies"
-            element={<ServicePage><OfficeSupplies /></ServicePage>}
-          />
-          <Route
-            path="/printing-services"
-            element={<ServicePage><PrintingServices /></ServicePage>}
-          />
-          <Route
-            path="/furniture"
-            element={<ServicePage><Furniture /></ServicePage>}
+            element={
+              <ServicePage>
+                <SchoolStationery />
+              </ServicePage>
+            }
           />
 
-          <Route path="/admin/login" element={<Login />} />
-          <Route element={<PrivateRoute />}>
-            <Route element={<AdminLayout />}>
-              <Route path="/admin/dashboard" element={<Dashboard />} />
-              <Route path="/admin/products" element={<Products />} />
-              <Route path="/admin/services" element={<AdminServices />} />
-              <Route path="/admin/contacts" element={<Contacts />} />
-              <Route path="/admin/content" element={<Content />} />
-            </Route>
-          </Route>
+          <Route
+            path="/office-supplies"
+            element={
+              <ServicePage>
+                <OfficeSupplies />
+              </ServicePage>
+            }
+          />
+
+          <Route
+            path="/printing-services"
+            element={
+              <ServicePage>
+                <PrintingServices />
+              </ServicePage>
+            }
+          />
+
+          <Route
+            path="/furniture"
+            element={
+              <ServicePage>
+                <Furniture />
+              </ServicePage>
+            }
+          />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

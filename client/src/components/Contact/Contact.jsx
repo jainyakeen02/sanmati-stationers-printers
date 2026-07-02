@@ -1,6 +1,6 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-import axios from "axios";
 import {
   FaClock,
   FaEnvelope,
@@ -8,8 +8,8 @@ import {
   FaPhoneAlt,
   FaWhatsapp,
 } from "react-icons/fa";
-import "./Contact.css";
 
+import "./Contact.css";
 import { businessInfo } from "../../data/siteConfig";
 
 const initialFormData = {
@@ -19,30 +19,6 @@ const initialFormData = {
   subject: "",
   message: "",
 };
-
-async function sendEmailJsMessage(payload) {
-  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-  if (!serviceId || !templateId || !publicKey) {
-    throw new Error("EmailJS environment variables are missing.");
-  }
-
-  await axios.post("https://api.emailjs.com/api/v1.0/email/send", {
-    service_id: serviceId,
-    template_id: templateId,
-    user_id: publicKey,
-    template_params: {
-      name: payload.name,
-      email: payload.email,
-      phone: payload.phone,
-      subject: payload.subject || "Website Inquiry",
-      message: payload.message,
-      time: new Date().toLocaleString("en-IN"),
-    },
-  });
-}
 
 const Contact = () => {
   const [formData, setFormData] = useState(initialFormData);
@@ -86,25 +62,37 @@ const Contact = () => {
 
     if (!validateForm()) return;
 
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      toast.error("EmailJS environment variables are missing.");
+      return;
+    }
+
     try {
       setLoading(true);
 
-      const payload = {
-        name: formData.name.trim(),
-        email: formData.email.trim(),
-        phone: formData.phone.trim(),
-        subject: formData.subject.trim(),
-        message: formData.message.trim(),
-      };
-
-      await sendEmailJsMessage(payload);
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          subject: formData.subject.trim() || "Website Inquiry",
+          message: formData.message.trim(),
+          time: new Date().toLocaleString("en-IN"),
+        },
+        publicKey
+      );
 
       toast.success("Message sent successfully.");
 
       setFormData(initialFormData);
     } catch (error) {
       console.error(error);
-
       toast.error("Failed to send message. Please try again.");
     } finally {
       setLoading(false);
@@ -114,8 +102,7 @@ const Contact = () => {
   const handleReset = () => {
     setFormData(initialFormData);
   };
-
-  return (
+    return (
     <section id="contact" className="contact-section">
       <div className="contact-container">
         <div className="contact-info">
@@ -171,7 +158,6 @@ const Contact = () => {
           <form onSubmit={handleSubmit} noValidate>
             <label>
               <span>Full Name *</span>
-
               <input
                 type="text"
                 name="name"
@@ -185,7 +171,6 @@ const Contact = () => {
 
             <label>
               <span>Email Address *</span>
-
               <input
                 type="email"
                 name="email"
@@ -199,7 +184,6 @@ const Contact = () => {
 
             <label>
               <span>Phone Number</span>
-
               <input
                 type="tel"
                 name="phone"
@@ -212,7 +196,6 @@ const Contact = () => {
 
             <label>
               <span>Subject</span>
-
               <input
                 type="text"
                 name="subject"
@@ -224,7 +207,6 @@ const Contact = () => {
 
             <label>
               <span>Message *</span>
-
               <textarea
                 rows="6"
                 name="message"
