@@ -1,271 +1,477 @@
-.header{
-    position: fixed;
-    top: 42px;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: all .35s ease;
-    background: rgba(255,255,255,.75);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border-bottom: 1px solid rgba(255,255,255,.2);
+/* ===========================
+   Header
+=========================== */
+
+.header {
+  position: fixed;
+  top: 42px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.35s ease;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(18, 58, 132, 0.08);
 }
 
-.header.sticky{
-    background: rgba(255,255,255,.95);
-    box-shadow: var(--shadow-md);
+.header.sticky {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.navbar{
-    height: 90px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.navbar {
+  height: 98px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  transition: all 0.3s ease;
 }
 
-/* ================= Logo ================= */
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    cursor:pointer;
+.header.sticky .navbar {
+  height: 86px;
 }
 
-.logo img{
-    width:58px;
-    height:58px;
-    object-fit:contain;
+/* ===========================
+   Logo
+=========================== */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+  text-decoration: none;
 }
 
-.logo h2{
-    color:var(--primary);
-    font-size:30px;
-    font-weight:700;
-    line-height:1;
+.logo img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  transition: all .3s ease;
 }
 
-.logo h3,
-.logo p{
-    color:var(--paragraph);
-    font-size:13px;
-    margin-top:4px;
+.header.sticky .logo img {
+  width: 68px;
+  height: 68px;
 }
 
-/* ================= Navigation ================= */
-
-.nav{
-    display:flex;
-    gap:40px;
+.logo-text {
+  display: flex;
+  flex-direction: column;
 }
 
-.nav a{
-    position:relative;
-    font-size:16px;
-    font-weight:600;
-    color:var(--heading);
-    transition:.3s;
+.logo h2 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 2.35rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.5px;
 }
 
-.nav a::after{
+.logo h3 {
+  margin-top: 6px;
+  color: #d62828;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
 
-    content:"";
+/* ===========================
+   Navigation
+=========================== */
 
-    position:absolute;
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
 
-    left:0;
+.nav a {
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--heading);
+  transition: .3s;
+}
 
-    bottom:-8px;
+.nav a:hover {
+  color: var(--primary);
+}
 
-    width:0;
-
-    height:3px;
-
-    border-radius:50px;
-
-    background:linear-gradient(
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 3px;
+  border-radius: 50px;
+  background: linear-gradient(
     to right,
     var(--primary),
-    var(--secondary)
-    );
-
-    transition:.35s;
-
+    #d62828
+  );
+  transition: .35s;
 }
 
-.nav a:hover{
-
-    color:var(--primary);
-
+.nav a:hover::after {
+  width: 100%;
 }
 
-.nav a:hover::after{
+/* ===========================
+   Desktop Buttons
+=========================== */
 
-    width:100%;
-
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
 }
 
-/* ================= Buttons ================= */
+.call-btn,
+.whatsapp-btn {
+  box-sizing: border-box;
 
-.nav-buttons{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    display:flex;
+  width: 180px;
+  height: 56px;
 
-    align-items:center;
+  padding: 0 24px;
 
-    gap:15px;
+  border-radius: 14px;
 
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+
+  gap: 10px;
+
+  transition: all .3s ease;
+}
+.call-btn {
+  border: 2px solid var(--primary);
+  background: #ffffff;
+  color: var(--primary);
 }
 
-.call-btn{
-
-    padding:13px 24px;
-
-    border-radius:12px;
-
-    color:var(--primary);
-
-    font-weight:600;
-
-    transition:.35s;
-
-    border:2px solid var(--primary);
-
+.call-btn:hover {
+  background: var(--primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(18, 58, 132, 0.22);
 }
 
-.call-btn:hover{
-    background:var(--primary);
-    color:#fff;
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(18,58,132,.25);
+.whatsapp-btn {
+  background: #25d366;
+  color: #ffffff;
+  border: 2px solid transparent;
 }
 
-.whatsapp-btn{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    padding:13px 24px;
-
-    border-radius:12px;
-
-    background:#25D366;
-
-    color:#fff;
-
-    font-weight:600;
-
-    transition:.35s;
-
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.28);
 }
 
-.whatsapp-btn:hover{
-    background:#1fba57;
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(37,211,102,.35);
+.call-btn svg,
+.whatsapp-btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
-/* ================= Mobile ================= */
+.call-btn span,
+.whatsapp-btn span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.menu-btn{
+/* ===========================
+   Mobile Action Buttons
+=========================== */
 
+.mobile-actions {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-icon-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s;
+}
+
+.mobile-icon-btn.phone {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: #ffffff;
+}
+
+.mobile-icon-btn.phone:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.mobile-icon-btn.whatsapp {
+  background: #25d366;
+  color: #ffffff;
+}
+
+.mobile-icon-btn.whatsapp:hover {
+  background: #1ebe5d;
+}
+
+.menu-btn {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #f5f7fb;
+  color: var(--primary);
+  cursor: pointer;
+  transition: .3s;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+}
+
+.menu-btn:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.mobile-buttons {
+  display: none;
+}
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media (max-width:1100px){
+
+  .nav{
+    gap:28px;
+  }
+
+  .logo img{
+    width:70px;
+    height:70px;
+  }
+
+  .logo h2{
+    font-size:2.1rem;
+  }
+
+  .logo h3{
+    font-size:1rem;
+  }
+
+  .call-btn,
+  .whatsapp-btn{
+    width:165px;
+    height:54px;
+    font-size:15px;
+  }
+
+}
+/* ===========================
+   Mobile
+=========================== */
+
+@media (max-width:992px){
+
+  .navbar{
+    height:86px;
+    gap:12px;
+  }
+
+  .logo{
+    gap:12px;
+  }
+
+  .logo img{
+    width:60px;
+    height:60px;
+  }
+
+  .logo h2{
+    font-size:1.8rem;
+  }
+
+  .logo h3{
+    font-size:.9rem;
+  }
+
+  .nav-buttons{
     display:none;
+  }
 
-    font-size:28px;
+  .mobile-actions{
+    display:flex;
+  }
 
-    cursor:pointer;
+  .menu-btn{
+    display:flex;
+  }
 
-    color:var(--primary);
+  .nav{
+    position:fixed;
+    top:128px;
+    left:-100%;
+    width:100%;
+    height:calc(100vh - 128px);
 
-}
+    background:#ffffff;
 
-/* ================= Responsive ================= */
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
 
-@media(max-width:992px){
+    padding:45px 30px;
 
-.nav{
+    gap:28px;
 
-position:fixed;
+    transition:left .35s ease;
 
-top:90px;
+    overflow-y:auto;
 
-left:-100%;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+  }
 
-width:100%;
+  .nav.active{
+    left:0;
+  }
 
-height:calc(100vh - 90px);
+  .nav a{
+    width:100%;
+    font-size:20px;
+  }
 
-background:#fff;
+  .mobile-buttons{
+    display:flex;
+    width:100%;
+    gap:12px;
+    margin-top:20px;
+  }
 
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:center;
-
-gap:35px;
-
-transition:.35s;
-
-}
-
-.nav.active{
-
-left:0;
-
-}
-
-.nav-buttons{
-
-display:none;
-
-}
-
-.menu-btn{
-
-display:block;
-
-}
-
-.logo h2{
-
-font-size:26px;
+  .mobile-buttons .call-btn,
+  .mobile-buttons .whatsapp-btn{
+    width:50%;
+    min-width:unset;
+    height:52px;
+    font-size:15px;
+    padding:0;
+  }
 
 }
 
+/* ===========================
+   Small Mobile
+=========================== */
+
+@media (max-width:576px){
+
+  .header{
+    top:40px;
+  }
+
+  .navbar{
+    height:80px;
+  }
+
+  .logo{
+    gap:10px;
+  }
+
+  .logo img{
+    width:54px;
+    height:54px;
+  }
+
+  .logo h2{
+    font-size:1.55rem;
+  }
+
+  .logo h3{
+    font-size:.82rem;
+  }
+
+  .mobile-actions{
+    gap:8px;
+  }
+
+  .mobile-icon-btn,
+  .menu-btn{
+    width:42px;
+    height:42px;
+    font-size:17px;
+  }
+
+  .nav{
+    top:120px;
+    height:calc(100vh - 120px);
+    padding:35px 24px;
+  }
+
+  .mobile-buttons{
+    flex-direction:row;
+  }
+
+  .mobile-buttons .call-btn,
+  .mobile-buttons .whatsapp-btn{
+    width:50%;
+    font-size:14px;
+  }
+
 }
 
-@media(max-width:576px){
+/* ===========================
+   Final Alignment Fix
+=========================== */
 
-.navbar{
+.call-btn,
+.whatsapp-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
 
-height:80px;
+  box-sizing:border-box;
 
+  white-space:nowrap;
+
+  line-height:1;
+
+  vertical-align:middle;
 }
 
-.logo img{
-
-width:48px;
-
-height:48px;
-
+.call-btn svg,
+.whatsapp-btn svg{
+  display:block;
+  width:18px;
+  height:18px;
+  flex-shrink:0;
 }
 
-.logo h2{
-
-font-size:24px;
-
-}
-
-.logo p{
-
-font-size:12px;
-
-}
-
+.call-btn span,
+.whatsapp-btn span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
 }

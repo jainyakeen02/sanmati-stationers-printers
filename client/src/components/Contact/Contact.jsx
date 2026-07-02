@@ -232,16 +232,6 @@ const Contact = () => {
               </button>
             </div>
           </form>
-
-          <a
-            href={businessInfo.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="whatsapp-btn"
-          >
-            <FaWhatsapp />
-            Chat on WhatsApp
-          </a>
         </div>
       </div>
     </section>

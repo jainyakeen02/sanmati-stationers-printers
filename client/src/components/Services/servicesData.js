@@ -7,19 +7,19 @@ const servicesData = [
     route: "/school-stationery",
 
     image:
-      "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&auto=format&fit=crop&q=80",
+      "https://media.istockphoto.com/id/546466652/photo/backpack-full-of-school-supplies-over-black-school-board-background.jpg?s=1024x1024&w=is&k=20&c=dy0y6sJiDvkMZYZwWxZzxEqgIdM7Ya7ISCEUOE2bVmU=",
 
     description:
-      "Complete range of school stationery products for students of all standards.",
+      "Premium notebooks, pens, school bags, art supplies and everyday stationery essentials for students of every age.",
 
-    button: "View Products",
+    button: "Explore Products",
 
     features: [
-      "Notebooks",
-      "Pens & Pencils",
-      "Drawing Materials",
+      "Premium Notebooks",
+      "Branded Pens",
+      "Art Supplies",
       "School Bags",
-      "Geometry Boxes",
+      "Geometry Kits",
     ],
   },
 
@@ -31,19 +31,19 @@ const servicesData = [
     route: "/office-supplies",
 
     image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&auto=format&fit=crop&q=80",
+      "https://media.istockphoto.com/id/182060333/photo/large-assortment-of-office-supplies-on-white-backdrop.jpg?s=1024x1024&w=is&k=20&c=grVLmhKo1ADRgjFLfcpIrDwc0HxfIZemgm8w4cd10IQ=",
 
     description:
-      "Everything required for offices, institutions and businesses under one roof.",
+      "Complete office stationery, files, printer paper and workplace essentials for offices, institutions and businesses.",
 
-    button: "View Products",
+    button: "Explore Products",
 
     features: [
       "Files & Folders",
       "Printer Paper",
-      "Registers",
+      "Office Registers",
       "Markers",
-      "Office Essentials",
+      "Desk Essentials",
     ],
   },
 
@@ -55,19 +55,19 @@ const servicesData = [
     route: "/printing-services",
 
     image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80",
+      "https://plus.unsplash.com/premium_vector-1716480139922-b5ace7ccc451?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 
     description:
-      "Professional printing solutions with high-quality output and quick service.",
+      "Professional photocopy, colour printing, lamination, binding and customized printing services with quick turnaround.",
 
-    button: "View Services",
+    button: "Explore Services",
 
     features: [
       "Photocopy",
       "Colour Printing",
-      "Lamination",
       "Binding",
-      "ID Cards",
+      "Lamination",
+      "ID & Visiting Cards",
     ],
   },
 
@@ -79,18 +79,18 @@ const servicesData = [
     route: "/furniture",
 
     image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&auto=format&fit=crop&q=80",
+      "https://plus.unsplash.com/premium_photo-1661963335534-cfa2e8a0e7e8?q=80&w=1268&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 
     description:
-      "Premium furniture solutions for schools, coaching institutes and offices.",
+      "High-quality classroom and office furniture designed for schools, coaching institutes, workplaces and businesses.",
 
-    button: "View Collection",
+    button: "Explore Collection",
 
     features: [
       "Office Chairs",
       "Study Tables",
       "School Benches",
-      "White Boards",
+      "Whiteboards",
       "Storage Cabinets",
     ],
   },

@@ -9,13 +9,10 @@ import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import FloatingActions from "./components/FloatingActions/FloatingActions";
+import VisitUs from "./components/VisitUs/VisitUs";
 import {
   FAQ,
-  Gallery,
-  GoogleMap,
   PrintingPortfolio,
-  ProductShowcase,
-  Testimonials,
   WhyChooseUs,
 } from "./components/HomeSections/HomeSections";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
@@ -40,6 +37,7 @@ function WebsiteShell({ children }) {
       <Announcement />
       <Header />
       {children}
+      <VisitUs />
       <Footer />
       <FloatingActions />
     </>
@@ -52,15 +50,11 @@ function Home() {
       <main id="main-content">
         <Hero />
         <Services />
-        <ProductShowcase />
         <PrintingPortfolio />
-        <Gallery />
         <WhyChooseUs />
-        <Testimonials />
         <FAQ />
         <About />
         <Contact />
-        <GoogleMap />
       </main>
     </WebsiteShell>
   );

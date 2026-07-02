@@ -29,18 +29,28 @@ function Services() {
 
         <div className="section-heading">
 
-          <span>OUR SERVICES</span>
+          <span style={{ fontSize: "1.25rem", fontWeight: "bolder" }}>OUR SERVICES</span>
 
           <h2>
             Everything You Need
             <br />
-            <span>Under One Roof</span>
+            <span style={{ fontSize: "1.25rem" , fontWeight: "bold"}}>Under One Roof</span>
           </h2>
 
-          <p>
-            Sanmati Stationers & Printers provides complete stationery,
-            printing solutions and furniture for schools, offices,
-            coaching institutes and businesses.
+          <p
+           style={{
+           maxWidth: "620px",
+           fontSize: "18px",
+           lineHeight: "1.9",
+           color: "#5f6b7a",
+           fontWeight: "400",
+          }}
+           >
+            From premium <strong>school stationery</strong> and{" "}
+            <strong>office essentials</strong> to{" "}
+            <strong>high-quality printing</strong> and{" "}
+            <strong>durable furniture</strong>, we deliver everything you need under one
+            roof with trusted service, quality products, and customer-first support.
           </p>
 
         </div>

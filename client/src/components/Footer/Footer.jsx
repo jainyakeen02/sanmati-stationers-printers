@@ -22,9 +22,6 @@ const Footer = () => {
           </h2>
           <p>{businessInfo.tagline}</p>
           <div className="footer-social">
-            <a href={businessInfo.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <FaFacebookF />
-            </a>
             <a href={businessInfo.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FaInstagram />
             </a>

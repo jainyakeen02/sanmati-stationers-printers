@@ -5,9 +5,9 @@ import "./Hero.css";
 import { businessInfo, heroStats } from "../../data/siteConfig";
 
 const heroPoints = [
-  "School Stationery",
-  "Office Supplies",
-  "Printing Services",
+  "School and Office Stationery",
+  "Sports Items",
+  "All in one Printing Services",
   "School & Office Furniture",
 ];
 
@@ -21,7 +21,7 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55 }}
         >
-          <span className="hero-badge">Trusted Since 2015</span>
+          <span className="hero-badge">⭐ Serving with Trust Since 2015</span>
 
           <h1>
             Everything You Need For
@@ -42,22 +42,6 @@ function Hero() {
                 {point}
               </div>
             ))}
-          </div>
-
-          <div className="hero-buttons">
-            <a href="#contact" className="primary-btn">
-              Send Inquiry
-              <FaArrowRight />
-            </a>
-            <a
-              href={businessInfo.whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="secondary-btn"
-            >
-              <FaWhatsapp />
-              WhatsApp
-            </a>
           </div>
         </motion.div>
 
