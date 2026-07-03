@@ -37,15 +37,7 @@ function Services() {
             <span style={{ fontSize: "1.25rem" , fontWeight: "bold"}}>Under One Roof</span>
           </h2>
 
-          <p
-           style={{
-           maxWidth: "620px",
-           fontSize: "18px",
-           lineHeight: "1.9",
-           color: "#5f6b7a",
-           fontWeight: "400",
-          }}
-           >
+          <p className="services-description">
             From premium <strong>school stationery</strong> and{" "}
             <strong>office essentials</strong> to{" "}
             <strong>high-quality printing</strong> and{" "}
