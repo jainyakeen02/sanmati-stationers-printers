@@ -3,7 +3,7 @@ import { FaArrowRight, FaCheckCircle, FaWhatsapp } from "react-icons/fa";
 import "./Hero.css";
 
 import { businessInfo, heroStats } from "../../data/siteConfig";
-
+import ShopImage from "../../assets/images/sanmati.png";
 const heroPoints = [
   "School and Office Stationery",
   "Sports Items",
@@ -52,8 +52,8 @@ function Hero() {
           transition={{ duration: 0.65, delay: 0.12 }}
         >
           <img
-            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1000&auto=format&fit=crop&q=80"
-            alt="Premium office stationery and printing workspace"
+             src={ShopImage}
+             alt="Sanmati Stationers & Printers"
           />
         </motion.div>
       </div>
