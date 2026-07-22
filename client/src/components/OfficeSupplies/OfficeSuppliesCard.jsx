@@ -13,10 +13,6 @@ const OfficeSuppliesCard = ({ product }) => {
         <h3>{product.name}</h3>
 
         <p>{product.description}</p>
-
-        <button className="office-btn">
-          Enquire Now
-        </button>
       </div>
     </div>
   );

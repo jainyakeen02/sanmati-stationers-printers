@@ -169,29 +169,7 @@
 .printing-card-content p {
   color: #666;
   line-height: 1.7;
-  margin-bottom: 22px;
-}
-
-/* ==========================================
-   Button
-========================================== */
-
-.printing-btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  text-decoration: none;
-  padding: 14px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #0056d2, #d60000);
-  color: #fff;
-  font-weight: 600;
-  transition: .3s;
-}
-
-.printing-btn:hover {
-  transform: translateY(-2px);
+  margin-bottom: 0;
 }
 
 /* ==========================================

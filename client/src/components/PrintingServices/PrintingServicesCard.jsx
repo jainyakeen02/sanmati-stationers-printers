@@ -19,17 +19,6 @@ const PrintingServicesCard = ({ service }) => {
         <h3>{service.name}</h3>
 
         <p>{service.description}</p>
-
-        <a
-          href={`https://wa.me/919999999999?text=Hello%20Sanmati%20Stationers,%20I%20am%20interested%20in%20${encodeURIComponent(
-            service.name
-          )}.`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="printing-btn"
-        >
-          Enquire Now
-        </a>
       </div>
     </div>
   );

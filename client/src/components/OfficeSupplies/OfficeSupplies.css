@@ -162,29 +162,7 @@
 .office-product-content p {
   color: #666;
   line-height: 1.7;
-  margin-bottom: 24px;
-}
-
-/* ==========================
-   Button
-========================== */
-
-.office-btn {
-  width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #0056d2, #d50000);
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.office-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.95;
+  margin-bottom: 0;
 }
 
 /* ==========================

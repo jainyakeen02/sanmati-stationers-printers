@@ -5,7 +5,6 @@ import { useState } from "react";
 import stationeryData from "./stationeryData";
 
 import {
-  FaWhatsapp,
   FaCheckCircle,
 } from "react-icons/fa";
 
@@ -148,19 +147,6 @@ function SchoolStationery() {
                   </li>
 
                 </ul>
-
-                <a
-                  href="https://wa.me/919982542202"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="whatsapp-btn"
-                >
-
-                  <FaWhatsapp />
-
-                  Enquire Now
-
-                </a>
 
               </div>
 

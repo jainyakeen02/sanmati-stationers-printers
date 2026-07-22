@@ -249,7 +249,7 @@
 
     gap:12px;
 
-    margin-bottom:24px;
+    margin-bottom:0;
 
 }
 
@@ -275,43 +275,6 @@
 
 }
 
-/* ======================================
-   WHATSAPP BUTTON
-====================================== */
-
-.product-content .whatsapp-btn{
-
-    width:100%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:10px;
-
-    padding:14px;
-
-    background:#25D366;
-
-    color:#fff;
-
-    border-radius:12px;
-
-    font-weight:600;
-
-    transition:.35s;
-
-}
-
-.product-content .whatsapp-btn:hover{
-
-    background:#1ca851;
-
-    transform:translateY(-3px);
-
-}
 /* ======================================
    Responsive Design
 ====================================== */
@@ -460,14 +423,6 @@ font-size:18px;
 
 }
 
-.product-content .whatsapp-btn{
-
-padding:13px;
-
-font-size:14px;
-
-}
-
 }
 
 /* ======================================
@@ -517,18 +472,6 @@ transform:scaleX(1);
 .product-card:hover{
 
 border-color:rgba(18,58,132,.2);
-
-}
-
-.product-content .whatsapp-btn svg{
-
-transition:.3s;
-
-}
-
-.product-content .whatsapp-btn:hover svg{
-
-transform:translateX(5px);
 
 }
 
