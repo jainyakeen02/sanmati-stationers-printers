@@ -25,7 +25,6 @@ export function PrintingPortfolio() {
     <section className="section portfolio-section" id="portfolio">
       <div className="container portfolio-layout">
         <div>
-          <span className="eyebrow">Printing Portfolio</span>
           <h2>Professional print work for everyday and special requirements.</h2>
           <p>
             From daily documents to custom event material, the store supports
