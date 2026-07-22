@@ -1,6 +1,6 @@
 const printingServicesData = {
   banner:
-    "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=80",
+    "https://images.unsplash.com/photo-1503694978374-8a2fa686963a?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 
   heading: "Printing Services",
 
@@ -20,34 +20,25 @@ const printingServicesData = {
       name: "Colour Printing",
       category: "Digital Printing",
       image:
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80",
+        "https://images.unsplash.com/photo-1715154470884-1c2be0b0129f?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "High-resolution colour printing for projects, presentations, brochures and marketing materials.",
     },
     {
       id: 2,
-      name: "Black & White Printing",
+      name: "Xerox",
       category: "Digital Printing",
       image:
-        "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=700&q=80",
+        "https://images.unsplash.com/photo-1650094980833-7373de26feb6?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "Fast and affordable black & white document printing for students, offices and institutions.",
-    },
-    {
-      id: 3,
-      name: "Photocopy Services",
-      category: "Digital Printing",
-      image:
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=700&q=80",
-      description:
-        "Single and bulk photocopy services with sharp print quality and quick delivery.",
     },
     {
       id: 4,
       name: "Lamination",
       category: "Binding & Finishing",
       image:
-        "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=700&q=80",
+        "https://media.istockphoto.com/id/1363337472/photo/pouches-lamination.jpg?s=1024x1024&w=is&k=20&c=qy5ZD38iWkgFtiWN-0prugkWW9zlSygOfyER0M-4lHM=",
       description:
         "Gloss and matte lamination to protect certificates, documents and important papers.",
     },
@@ -56,7 +47,7 @@ const printingServicesData = {
       name: "Spiral & Book Binding",
       category: "Binding & Finishing",
       image:
-        "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=700&q=80",
+        "https://images.unsplash.com/photo-1780535393597-922070f9a9cc?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "Professional spiral binding, hard binding and project report finishing services.",
     },
@@ -65,7 +56,7 @@ const printingServicesData = {
       name: "Visiting Cards",
       category: "Business Branding",
       image:
-        "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=700&q=80",
+        "https://images.unsplash.com/photo-1599590984817-0c15f31b1fa5?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "Premium business cards with modern designs, quality paper and elegant finishes.",
     },
@@ -74,7 +65,7 @@ const printingServicesData = {
       name: "Letterheads & Envelopes",
       category: "Business Branding",
       image:
-        "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=700&q=80",
+        "https://plus.unsplash.com/premium_photo-1726754742476-915c95b6ed4d?q=80&w=1121&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "Custom printed letterheads and envelopes for professional business identity.",
     },
@@ -83,7 +74,7 @@ const printingServicesData = {
       name: "Brochures & Flyers",
       category: "Offset Printing",
       image:
-        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=700&q=80",
+        "https://images.unsplash.com/photo-1695634621375-0b66a9d5d1bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "Promotional brochures, flyers and marketing materials with vibrant print quality.",
     },
@@ -92,7 +83,7 @@ const printingServicesData = {
       name: "ID Cards & Certificates",
       category: "Business Branding",
       image:
-        "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=700&q=80",
+        "https://plus.unsplash.com/premium_photo-1764911595398-3e4ce3674174?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "Custom ID cards, certificates and event badges with professional finishing.",
     },

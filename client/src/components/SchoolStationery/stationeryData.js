@@ -28,7 +28,7 @@ const stationeryData = [
     category: "Geometry",
     name: "Geometry Box",
     image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80",
+      "https://plus.unsplash.com/premium_photo-1664303224802-c27cfe80ee4e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 
   {
@@ -36,7 +36,7 @@ const stationeryData = [
     category: "Drawing",
     name: "Drawing Kit",
     image:
-      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1627109849234-722d28f9ed5a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 
   {
@@ -60,7 +60,7 @@ const stationeryData = [
     category: "Lunch Box",
     name: "Lunch Box",
     image:
-      "https://images.unsplash.com/photo-1625944525533-473f1b3d54b1?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1726726192151-6d4139ff229d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
