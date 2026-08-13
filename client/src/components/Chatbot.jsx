@@ -173,8 +173,10 @@ Always maintain a warm, professional and helpful tone. If asked about something 
 
 
 
-// Initialize the Gemini client
-const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+// Do not initialize the browser client unless a deployment has deliberately
+// supplied a key. Initializing it with an undefined key crashes the entire app.
+const geminiApiKey = import.meta.env.VITE_GEMINI_API_KEY;
+const ai = geminiApiKey ? new GoogleGenAI({ apiKey: geminiApiKey }) : null;
 
 const Chatbot = ({ isOpen, onToggle }) => {
   const [messages, setMessages] = useState([
@@ -196,6 +198,8 @@ const Chatbot = ({ isOpen, onToggle }) => {
   }, [messages, isLoading]);
 
   const initChatSession = async () => {
+    if (!ai) return;
+
     if (!chatSessionRef.current) {
       try {
         chatSessionRef.current = ai.chats.create({
@@ -226,6 +230,18 @@ const Chatbot = ({ isOpen, onToggle }) => {
     setMessages((prev) => [...prev, userMessage]);
     setInputValue('');
     setIsLoading(true);
+
+    if (!ai) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: 'bot',
+          content: 'Online chat is temporarily unavailable. Please contact us by phone, WhatsApp, or email and we will be happy to help.'
+        }
+      ]);
+      setIsLoading(false);
+      return;
+    }
 
     try {
       if (!chatSessionRef.current) {
