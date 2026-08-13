@@ -14,10 +14,14 @@ const defaultAllowedOrigins = [
   'https://www.sanmatistationersandprinters.in',
 ];
 
-const allowedOrigins = (process.env.ALLOWED_ORIGINS || defaultAllowedOrigins.join(','))
+const configuredOrigins = (process.env.ALLOWED_ORIGINS || '')
   .split(',')
   .map((origin) => origin.trim())
   .filter(Boolean);
+
+// Always retain the production storefronts. This prevents a malformed Render
+// setting from taking the chat API offline for the website.
+const allowedOrigins = [...new Set([...defaultAllowedOrigins, ...configuredOrigins])];
 
 const app = express();
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
