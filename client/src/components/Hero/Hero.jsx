@@ -3,7 +3,7 @@ import { FaArrowRight, FaCheckCircle, FaWhatsapp } from "react-icons/fa";
 import "./Hero.css";
 
 import { businessInfo, heroStats } from "../../data/siteConfig";
-import ShopImage from "../../assets/images/sanmati.png";
+import ShopImage from "../../assets/sanmati.png";
 const heroPoints = [
   "School and Office Stationery",
   "Sports Items",

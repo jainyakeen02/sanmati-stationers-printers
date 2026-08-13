@@ -23,9 +23,15 @@
   background: var(--whatsapp);
 }
 
-.floating-actions a:nth-child(2),
+.floating-actions a:nth-child(3),
 .floating-actions button {
   background: var(--primary);
+}
+
+/* Chatbot toggle button in FloatingActions */
+.floating-actions .chatbot-fab {
+  background: var(--primary);
+  font-size: 22px;
 }
 
 .floating-actions a:hover,

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { FaArrowUp, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import { IoChatbubblesOutline, IoCloseOutline } from "react-icons/io5";
 import "./FloatingActions.css";
 
 import { businessInfo } from "../../data/siteConfig";
 
-function FloatingActions() {
+function FloatingActions({ isChatOpen, onChatToggle }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -16,6 +17,14 @@ function FloatingActions() {
 
   return (
     <div className="floating-actions" aria-label="Quick contact actions">
+      <button
+        type="button"
+        className="chatbot-fab"
+        aria-label={isChatOpen ? "Close chat" : "Open chat"}
+        onClick={onChatToggle}
+      >
+        {isChatOpen ? <IoCloseOutline /> : <IoChatbubblesOutline />}
+      </button>
       <a href={businessInfo.whatsappUrl} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp">
         <FaWhatsapp />
       </a>
