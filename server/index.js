@@ -9,7 +9,12 @@ if (missing.length) {
   throw new Error(`Missing required environment variable: ${missing.join(', ')}`);
 }
 
-const allowedOrigins = (process.env.ALLOWED_ORIGINS || '')
+const defaultAllowedOrigins = [
+  'https://sanmatistationersandprinters.in',
+  'https://www.sanmatistationersandprinters.in',
+];
+
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || defaultAllowedOrigins.join(','))
   .split(',')
   .map((origin) => origin.trim())
   .filter(Boolean);
