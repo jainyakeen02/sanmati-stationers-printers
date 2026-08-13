@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: sanmati-chat-api
+    runtime: node
+    rootDir: server
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://sanmatistationersandprinters.in,https://www.sanmatistationersandprinters.in
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash

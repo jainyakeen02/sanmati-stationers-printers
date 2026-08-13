@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { GoogleGenAI } from '@google/genai';
 import Markdown from 'markdown-to-jsx';
 import { IoChatbubblesOutline, IoCloseOutline, IoSend } from 'react-icons/io5';
 import './Chatbot.css';
@@ -173,10 +172,7 @@ Always maintain a warm, professional and helpful tone. If asked about something 
 
 
 
-// Do not initialize the browser client unless a deployment has deliberately
-// supplied a key. Initializing it with an undefined key crashes the entire app.
-const geminiApiKey = import.meta.env.VITE_GEMINI_API_KEY;
-const ai = geminiApiKey ? new GoogleGenAI({ apiKey: geminiApiKey }) : null;
+const chatApiUrl = import.meta.env.VITE_CHAT_API_URL?.replace(/\/$/, '');
 
 const Chatbot = ({ isOpen, onToggle }) => {
   const [messages, setMessages] = useState([
@@ -198,21 +194,8 @@ const Chatbot = ({ isOpen, onToggle }) => {
   }, [messages, isLoading]);
 
   const initChatSession = async () => {
-    if (!ai) return;
-
-    if (!chatSessionRef.current) {
-      try {
-        chatSessionRef.current = ai.chats.create({
-          model: 'gemini-3.5-flash',
-          config: {
-            systemInstruction: SYSTEM_PROMPT,
-            temperature: 0.7,
-          }
-        });
-      } catch (error) {
-        console.error("Failed to initialize chat session:", error);
-      }
-    }
+    // Gemini runs on the server so its API key is never exposed to visitors.
+    return Boolean(chatApiUrl);
   };
 
   const handleToggle = () => {
@@ -231,7 +214,7 @@ const Chatbot = ({ isOpen, onToggle }) => {
     setInputValue('');
     setIsLoading(true);
 
-    if (!ai) {
+    if (!chatApiUrl) {
       setMessages((prev) => [
         ...prev,
         {
@@ -244,17 +227,23 @@ const Chatbot = ({ isOpen, onToggle }) => {
     }
 
     try {
-      if (!chatSessionRef.current) {
-        await initChatSession();
-      }
-      
-      const response = await chatSessionRef.current.sendMessage({
-        message: userMessage.content
+      const response = await fetch(`${chatApiUrl}/api/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: userMessage.content,
+          history: messages.slice(-10).map(({ role, content }) => ({ role, content }))
+        })
       });
+
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error || 'Unable to send your message right now.');
+      }
 
       setMessages((prev) => [
         ...prev,
-        { role: 'bot', content: response.text }
+        { role: 'bot', content: data.reply }
       ]);
     } catch (error) {
       console.error('Error sending message:', error);
