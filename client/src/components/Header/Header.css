@@ -377,7 +377,8 @@
 
   .mobile-buttons .call-btn,
   .mobile-buttons .whatsapp-btn{
-    width:50%;
+    flex:1 1 0;
+    width:auto;
     min-width:unset;
     height:52px;
     font-size:15px;
@@ -440,7 +441,8 @@
 
   .mobile-buttons .call-btn,
   .mobile-buttons .whatsapp-btn{
-    width:50%;
+    flex:1 1 0;
+    width:auto;
     font-size:14px;
   }
 
