@@ -21,3 +21,5 @@ VITE_CHAT_API_URL=https://YOUR-RENDER-URL
 Apply it to Production, Preview, and Development as needed, then redeploy Vercel.
 
 `VITE_CHAT_API_URL` is public by design; `GEMINI_API_KEY` must exist only on Render. The API accepts requests only from the configured website domains.
+
+Set `GEMINI_MODEL` to `gemini-3.6-flash` in Render. The backend uses Gemini's supported Interactions API.

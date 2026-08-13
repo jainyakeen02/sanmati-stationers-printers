@@ -25,7 +25,7 @@ const allowedOrigins = [...new Set([...defaultAllowedOrigins, ...configuredOrigi
 
 const app = express();
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+const model = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
 
 app.disable('x-powered-by');
 app.use(cors({
@@ -57,11 +57,11 @@ app.post('/api/chat', async (request, response) => {
   const instructions = `You are a friendly, concise customer-support assistant for Sanmati Stationers & Printers in Peeth, Dungarpur, Rajasthan. This is a promotional site, not an e-commerce store. For exact prices or unavailable details, direct customers to phone +91 9982542202, WhatsApp, or pareshsanmati@gmail.com. Never invent prices, stock, policies, or contact details.`;
 
   try {
-    const result = await ai.models.generateContent({
+    const result = await ai.interactions.create({
       model,
-      contents: `${instructions}\n\nConversation:\n${sanitizedHistory.join('\n')}\nCustomer: ${message.trim()}\nAssistant:`,
+      input: `${instructions}\n\nConversation:\n${sanitizedHistory.join('\n')}\nCustomer: ${message.trim()}\nAssistant:`,
     });
-    const reply = result.text?.trim();
+    const reply = result.output_text?.trim();
     if (!reply) throw new Error('Gemini returned an empty reply.');
     return response.json({ reply });
   } catch (error) {
